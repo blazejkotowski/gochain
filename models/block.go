@@ -35,8 +35,9 @@ func (b *Block) Hash() string {
 func (b *Block) String() string {
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("\033[36mBlock %v\033[0m\n", b.hash))
-	sb.WriteString(fmt.Sprintf("\ttimestamp:\t%v\n", b.timestamp))
+	sb.WriteString(fmt.Sprintf("\t\033[36mhash: %v\033[0m\n", b.hash))
+	timeString := time.Unix(b.timestamp, 0).Format(time.ANSIC)
+	sb.WriteString(fmt.Sprintf("\ttimestamp:\t%v (%v)\n", b.timestamp, timeString))
 	sb.WriteString(fmt.Sprintf("\tpreviousHash:\t%v\n", b.previousHash))
 
 	sb.WriteString("\tTransactions: [\n")

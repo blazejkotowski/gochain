@@ -43,5 +43,5 @@ func (bc *Blockchain) String() string {
 }
 
 func newGenesisBlock() *Block {
-	return NewBlock("0x00000000000000000000000000000000", nil)
+	return NewBlock("0x0000000000000000000000000000000000000000000000000000000000000000", nil)
 }
